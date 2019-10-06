@@ -1,23 +1,30 @@
-
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">My Store</a>
+<div class="container">
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+  <a class="navbar-brand"  routerLink="/home">My Store</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link"  routerLink="/home">Home</a>
       </li>
+
       <li class="nav-item">
-        <a class="nav-link" href="#">Goods List</a>
+        <a class="nav-link"  routerLink="/cart">Checkout</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Checkout</a>
-      </li>
+
 
     </ul>
-  </div>
-</nav>
 
+  </div>
+  <button class="btn btn-danger rounded-pill float-right"> Log Out </button>
+
+</nav>
+<!-- The sidebar -->
+
+<!-- Page content -->
+<div class="jumbotron">
 <router-outlet></router-outlet>
+</div>
+</div>
