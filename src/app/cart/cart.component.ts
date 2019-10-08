@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {DataService} from '../data.service';
+
 
 @Component({
   selector: 'app-cart',
@@ -7,9 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CartComponent implements OnInit {
 
-  constructor() { }
+  private itemData ={}
+
+  constructor( private dataService:DataService) { }
 
   ngOnInit() {
+
+this.dataService.homeData$.subscribe(
+
+  data =>
+  {
+    this.itemData = data,
+    console.log(data)
   }
+);
+
+  }
+
+
+
 
 }

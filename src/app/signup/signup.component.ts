@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ApiService} from '../api.service';
 
 @Component({
   selector: 'app-signup',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignupComponent implements OnInit {
 
-  constructor() { }
+  registerUserData = {}
+
+  constructor(private api:ApiService) { }
 
   ngOnInit() {
+  }
+
+  signUp(){
+    this.api.signUp(this.registerUserData).subscribe(
+      res => console.log(res),
+      err => console.log(err)
+    );
+
   }
 
 }

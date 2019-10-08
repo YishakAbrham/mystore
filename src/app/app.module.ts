@@ -8,6 +8,8 @@ import { HomeComponent } from './home/home.component';
 import { CartComponent } from './cart/cart.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import {FormsModule} from '@angular/forms';
+import {ApiService} from './api.service';
 
 @NgModule({
   declarations: [
@@ -21,8 +23,12 @@ import { SignupComponent } from './signup/signup.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
   ],
-  providers: [],
+  providers: [
+    ApiService,
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

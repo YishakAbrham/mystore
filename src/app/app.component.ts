@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {Router, RouterModule, Routes} from '@angular/router';
+import {ApiService} from './api.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'mystore';
+
+  constructor(private router: Router) { }
+
+
+  logOut(){
+    this.router.navigate(['/login']);
+
+  }
 }
